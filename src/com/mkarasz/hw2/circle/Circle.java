@@ -16,20 +16,20 @@ public class Circle {
 	double radius;
 	
 	public Circle(){
-		this.x = 0;
-		this.y = 0;
+		this.x = 1;
+		this.y = 1;
 		this.radius = 1;
 	}
 	
 	public Circle(double radius){
-		this.x = 0;
-		this.y = 0;
+		this.x = radius;
+		this.y = radius;
 		this.radius = radius;
 	}
 	
 	public Circle(double x, double y, double radius){
-		this.x = x - radius;
-		this.y = y - radius;
+		this.x = x;
+		this.y = y;
 		this.radius = radius;
 	}
 	
@@ -69,7 +69,24 @@ public class Circle {
 		return Math.sqrt(Math.pow(this.x + this.radius, 2) + Math.pow(this.y + this.radius, 2));
 	}
 	
-	public void draw(){
+	public void draw(){		
+		//double x = this.x; 
+		
+		for (int i = 0; i <= 2*this.x; i++){
+	        for (int j = 0; j <= 2*this.y; j++){
+	            double dx = (x - i);
+	            double dy = (y - j);
+
+	            if (Math.abs(dx*dx + dy*dy - radius*radius) < 5){
+	                System.out.print("*");
+	            }
+	            else{
+	                System.out.print(" ");
+	            }
+	        }
+	        System.out.println();
+	    }
+		
 		
 	}
 	

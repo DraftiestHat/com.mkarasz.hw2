@@ -85,6 +85,23 @@ public class Rectangle {
 	
 	public void draw(){
 		
+		int i = 0;
+		
+		for(i = 0; i < this.y; i++){
+			System.out.println();
+		}
+		
+		for(int j = 0; j < this.height; j++){		
+			for(i = 0; i < this.x + this.width; i++){
+				if(i < this.x){
+					System.out.print(" ");
+				}
+				else
+					System.out.print("*");
+			}
+			System.out.println();
+		}
+		
 	}
 	
 	/*public void draw(){

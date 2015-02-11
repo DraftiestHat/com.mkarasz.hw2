@@ -7,24 +7,21 @@ public class CircleTest {
 		Circle c = new Circle();
 		
 		System.out.println("Non-initialized-circle stats:");
-		printStats(c);
+		printStats(c);		
+		c.draw();
 		System.out.println();
 		
-		c.draw();
-		
-		c = new Circle(20.5);
+		c = new Circle(5);
 		
 		System.out.println("Only-radius-initialized-circle stats:");
 		printStats(c);
-		System.out.println();
 		c.draw();
+		System.out.println();
 		
-		c = new Circle(84.3, 79.1, 60);
+		c = new Circle(6, 7, 4);
 		System.out.println("Everything-initialized-circle stats:");
 		printStats(c);
 		c.draw();
-		
-		Thread.sleep(20000);
 		c = null;
 		System.exit(0);
 

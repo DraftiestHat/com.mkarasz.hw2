@@ -10,21 +10,20 @@ public class RectangleTest {
 		
 		System.out.println("Non-initialized-Rectangle stats:");
 		printStats(r);
-		System.out.println();
 		r.draw();
+		System.out.println();
 		
-		r = new Rectangle(70,45.2);
+		r = new Rectangle(20,16);
 		System.out.println("Width and Height-initialized-Rectangle stats:");
 		printStats(r);
-		System.out.println();
 		r.draw();
+		System.out.println();
 		
 		r = new Rectangle(8.1, 9.2, 2.6, 3.0);
 		System.out.println("Everything-initialized-Rectangle stats:");
 		printStats(r);
 		r.draw();
 		
-		Thread.sleep(20000);
 		
 		System.exit(0);
 		
