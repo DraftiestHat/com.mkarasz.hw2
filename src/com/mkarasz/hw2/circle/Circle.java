@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 /**
- * MY GOD DOES THIS NEED COMMENTS.
+ * Implements a general circle.
  */
 package com.mkarasz.hw2.circle;
 
@@ -9,114 +8,34 @@ package com.mkarasz.hw2.circle;
 public class Circle {
 	
 	/**
-	 * 
+	 * This holds information about a circle - Center point coordinates, radius, and functions for it.
 	 */
 	//private static final long serialVersionUID = 1L;
 	double x;
 	double y;
 	double radius;
-	
-	public Circle(){
-		this.x = 0;
-		this.y = 0;
-		this.radius = 1;
-	}
-	
-	public Circle(double radius){
-		this.x = 0;
-		this.y = 0;
-		this.radius = radius;
-	}
-	
-	public Circle(double x, double y, double radius){
-		this.x = x - radius;
-		this.y = y - radius;
-		this.radius = radius;
-	}
-	
-	public double getX() {
-		return x;
-	}
-
-	public void setX(double x) {
-		this.x = x;
-	}
-
-	public double getY() {
-		return y;
-	}
-
-	public void setY(double y) {
-		this.y = y;
-	}
-
-	public double getRadius() {
-		return radius;
-	}
-
-	public void setRadius(double radius) {
-		this.radius = radius;
-	}
-
-	public double area(){
-		return Math.PI * this.radius * this.radius;
-	}
-	
-	public double perimeter(){
-		return 2 * Math.PI * this.radius;
-	}
-	
-	public double distanceFromOrigin(){
-		return Math.sqrt(Math.pow(this.x + this.radius, 2) + Math.pow(this.y + this.radius, 2));
-	}
-	
-	public void draw(){
-		
-	}
-	
-	/*public void draw(){
-		JFrame f = new JFrame();
-		f.setBounds(300,300,300,300);
-		f.getContentPane().add(this);
-		f.setVisible(true);
-	}
-	
-	public void paint(Graphics g){
-		Graphics2D g2 = (Graphics2D) g;
-		g2.draw(new Ellipse2D.Double(this.x, this.y, this.radius * 2, this.radius * 2));
-	}*/
-	
-}
-=======
-/**
- * MY GOD DOES THIS NEED COMMENTS.
- */
-package com.mkarasz.hw2.circle;
-
-
-
-public class Circle {
 	
 	/**
-	 * 
+	 * Simplist circle. 
 	 */
-	//private static final long serialVersionUID = 1L;
-	double x;
-	double y;
-	double radius;
-	
 	public Circle(){
 		this.x = 1;
 		this.y = 1;
 		this.radius = 1;
 	}
 	
+	/**
+	 * A circle that the radius sets all info. 
+	 */
 	public Circle(double radius){
 		this.x = radius;
 		this.y = radius;
 		this.radius = radius;
 	}
 	
+	/**
+	 * Most complicated circle - set all factors. 
+	 */
 	public Circle(double x, double y, double radius){
 		this.x = x;
 		this.y = y;
@@ -156,21 +75,23 @@ public class Circle {
 	}
 	
 	public double distanceFromOrigin(){
-		return Math.sqrt(Math.pow(this.x + this.radius, 2) + Math.pow(this.y + this.radius, 2));
+		return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
 	}
 	
+	/**
+	 * This is shittily done. If it were ints, I would have been fine. I also don't have time to implement it well. 
+	 **/
 	public void draw(){		
-		//double x = this.x; 
 		
-		for (int i = 0; i <= 2*this.x; i++){
-	        for (int j = 0; j <= 2*this.y; j++){
-	            double dx = (x - i);
-	            double dy = (y - j);
+		for (int i = 0; i <= 2 * this.x; i++){
+	        for (int j = 0; j <= 2 * this.y; j++){
+	            double inX = (x - i);
+	            double inY = (y - j);
 
-	            if (Math.abs(dx*dx + dy*dy - radius*radius) < 5){
-	                System.out.print("*");
+	            if (Math.abs(Math.pow(inX, 2) + Math.pow(inY, 2) - Math.pow(this.radius, 2)) < 5){ //print as long as we're within a certain distance. 
+	                System.out.print("X");
 	            }
-	            else{
+	            else{ //put in a space. Gives the circle an outline.
 	                System.out.print(" ");
 	            }
 	        }
@@ -193,4 +114,3 @@ public class Circle {
 	}*/
 	
 }
->>>>>>> origin/master
